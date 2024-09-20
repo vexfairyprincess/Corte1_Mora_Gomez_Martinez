@@ -8,19 +8,19 @@ public class Employee {
     private String lastNames;
     private int age;
     private double baseSalary;
-    private int incentive = 300;
+    private static final int INCENTIVE = 300;
 
     public Employee() {
     }
 
-    public Employee(String id, String names, String lastNames, int age, double baseSalary, int incentive) {
+    public Employee(String id, String names, String lastNames, int age, double baseSalary) {
         this.id = id;
         this.names = names;
         this.lastNames = lastNames;
         this.age = age;
         this.baseSalary = baseSalary;
-        this.incentive = incentive;
     }
+
 
     public String getId() {
         return id;
@@ -62,14 +62,6 @@ public class Employee {
         this.baseSalary = baseSalary;
     }
 
-    public int getIncentive() {
-        return incentive;
-    }
-
-    public void setIncentive(int incentive) {
-        this.incentive = incentive;
-    }
-
     @Override
     public String toString() {
         final StringBuffer sb = new StringBuffer("Employee{");
@@ -78,7 +70,6 @@ public class Employee {
         sb.append(", lastNames='").append(lastNames).append('\'');
         sb.append(", age=").append(age);
         sb.append(", baseSalary=").append(baseSalary);
-        sb.append(", incentive=").append(incentive);
         sb.append('}');
         return sb.toString();
     }
@@ -88,11 +79,11 @@ public class Employee {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Employee employee = (Employee) o;
-        return age == employee.age && Double.compare(baseSalary, employee.baseSalary) == 0 && incentive == employee.incentive && Objects.equals(id, employee.id) && Objects.equals(names, employee.names) && Objects.equals(lastNames, employee.lastNames);
+        return age == employee.age && Double.compare(baseSalary, employee.baseSalary) == 0 && Objects.equals(id, employee.id) && Objects.equals(names, employee.names) && Objects.equals(lastNames, employee.lastNames);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, names, lastNames, age, baseSalary, incentive);
+        return Objects.hash(id, names, lastNames, age, baseSalary);
     }
 }
