@@ -6,12 +6,20 @@ public class Dealer extends Employee {
     public Dealer() {
     }
 
+    public Dealer(String zone) {
+        this.zone = zone;
+    }
+
+    public Dealer(String id, String names, String lastNames, int age, double baseSalary, String zone) {
+        super(id, names, lastNames, age, baseSalary);
+        this.zone = zone;
+    }
+
     public Dealer(String id, String names, String lastNames, int age, double baseSalary, int incentive, String zone) {
         super(id, names, lastNames, age, baseSalary, incentive);
         this.zone = zone;
     }
 
-    @Override
     public double calculateSalary() {
         double finalSalary = this.getBaseSalary();
         if (this.getAge() < 25 && "Ciudad Sandino".equalsIgnoreCase(this.zone)) {

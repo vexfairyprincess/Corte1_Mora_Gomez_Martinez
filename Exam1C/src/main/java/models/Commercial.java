@@ -6,6 +6,15 @@ public class Commercial extends Employee {
     public Commercial() {
     }
 
+    public Commercial(double comission) {
+        this.comission = comission;
+    }
+
+    public Commercial(String id, String names, String lastNames, int age, double baseSalary, double comission) {
+        super(id, names, lastNames, age, baseSalary);
+        this.comission = comission;
+    }
+
     public Commercial(String id, String names, String lastNames, int age, double baseSalary, int incentive, double comission) {
         super(id, names, lastNames, age, baseSalary, incentive);
         this.comission = comission;
